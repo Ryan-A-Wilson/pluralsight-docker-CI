@@ -16,7 +16,7 @@ deployment:
 
 notify:
   webhooks:
-    - url https://registry.hub.docker.com/u/ryanawilson/pluralsight-docker-ci/trigger/f3b120ec-d9e1-40f7-ad43-4475885d3519/
+    - url: https://registry.hub.docker.com/u/ryanawilson/pluralsight-docker-ci/trigger/f3b120ec-d9e1-40f7-ad43-4475885d3519/
 
 test:
   override:    
