@@ -1,24 +1,12 @@
+# The deployment section should be excluded until
+# it is explicitly included in module 5
 
-machine:
-	services:
-		- docker
-
-dependencies:
-	override:
-		- docker info
-		- docker build -t ryanawilson/pluralsight-docker-CI
-		
 deployment:
   dockerhub:
     branch: master
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-	  - docker push ryanawilson/pluralsight-docker-CI
+      - $DOCKER_HUB_TRIGGER
 
-notify:
-	webhooks:
-		- url: https://registry.hub.docker.com/u/ryanawilson/pluralsight-docker-ci/trigger/f3b120ec-d9e1-40f7-ad43-4475885d3519/
-	  
 test:
   override:    
     - mocha
