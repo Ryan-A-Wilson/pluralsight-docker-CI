@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t ryanawilson/pluralsight-docker-ci
+    - docker build -t ryanawilson/pluralsight-docker-ci .
 
 deployment:
   hub:
